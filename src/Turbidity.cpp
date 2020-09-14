@@ -11,7 +11,8 @@ Turbidity::Turbidity(int pin)
 double Turbidity::getValue()
 {
   adcToPpm();
-  return ppm;
+  // return ppm;
+  return totalItteration * 139.33;
 }
 
 // Private Method
@@ -19,7 +20,7 @@ double Turbidity::getValue()
 void Turbidity::read()
 {
   rawVoltage = analogRead(pin);
-  realVoltage = rawVoltage * ADC_EQ;
+  realVoltage = abs(rawVoltage * ADC_EQ);
 }
 
 void Turbidity::itteration()

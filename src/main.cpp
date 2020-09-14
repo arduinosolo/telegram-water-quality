@@ -18,8 +18,8 @@
 // #define CHAT_ID "407689155"
 
 // Pengaturan koneksi WiFi
-const char *SSID = "realme 5";
-const char *PASSWORD = "12345678";
+const char *SSID = "vivo y50";
+const char *PASSWORD = "ad2042cc";
 
 // Pengaturan waktu tunggu
 unsigned long prevTime = 0;
@@ -99,6 +99,7 @@ void loop()
     lcd.print("pH: " + String(pH.getValue()));
     lcd.setCursor(0, 1);
     lcd.print("ppm: " + String(turbidity.getValue()));
+    // lcd.print("ppm: " + String(analogRead(TURBIDITY_PIN) / 4096.0 * 3.3));
 
     // Menerima dan membaca pesan dari telegram
     int newMessage = bot.getUpdates(bot.last_message_received + 1);
